@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class store extends FormRequest
+class update extends FormRequest
 {
     /**
      * Handler Validator Logs.
@@ -30,22 +30,23 @@ class store extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, mixed>
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             'first_name'    => 'required|max:100',
             'last_name'     => 'required|max:100',
             'birth_day'     => 'required|date',
             'place_birth'   => 'required',
-            'email'         => 'required|email|unique:customers,email',
-            'mobilephone'   => 'required|unique:customers,mobilephone|regex:/^08[0-9]{8,13}$/',
+            'email'         => 'required|email|unique:customers,email,' . $this->id,
+            'mobilephone'   => 'required|unique:customers,mobilephone,' . $this->id . '|regex:/^08[0-9]{8,13}$/',
             'address'       => 'required',
             'city'          => 'required',
             'country'       => 'required',
         ];
     }
+
 
     /**
      * Get the error messages for the defined validation rules.
@@ -66,8 +67,8 @@ class store extends FormRequest
             'email.email'           => 'Format email tidak valid.',
             'email.unique'          => 'Email sudah digunakan.',
             'mobilephone.required'  => 'Kolom nomor telepon wajib diisi.',
-            'mobilephone.regex'     => 'Format nomor telepon tidak valid. Harus dimulai dengan 08 dan berisi 10-15 angka.',
             'mobilephone.unique'    => 'Nomor telepon sudah digunakan.',
+            'mobilephone.regex'     => 'Format nomor telepon tidak valid. Harus dimulai dengan 08 dan berisi 10-15 angka.',
             'address.required'      => 'Kolom alamat wajib diisi.',
             'city.required'         => 'Kolom kota wajib diisi.',
             'country.required'      => 'Kolom negara wajib diisi.',
