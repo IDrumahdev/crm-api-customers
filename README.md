@@ -87,17 +87,18 @@ VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 ```
 - catatan : Sesuaikan konfigurasi database di antaranya nama DB_DATABASE crmdb , DB_USERNAME dan DB_PASSWORD dengan benar. Jika APP_KEY masih belum terisi ``` php artisan key:generate```
 
-6. Jalankan perintah
+6. Buat nama database di database lokal dengan nama crmdb (misal menggunakan tools phpmyadmin).
+
+7. Import database MySQL yang ada di link google drive dengan nama file crmdb.sql
+
+8. Jalankan perintah
 ```shell
 composer install
 ```
 
-7. Jalankan perintah
+9. Jalankan perintah
 ```shell
 php artisan serve
 ```
-8. Buat nama database di database lokal dengan nama crmdb (misal menggunakan tools phpmyadmin).
-
-9. Import database MySQL yang ada di link google drive dengan nama file crmdb.sql
 
 10. Import api_crm.postman_collection.json kedalam aplikasi postman.
