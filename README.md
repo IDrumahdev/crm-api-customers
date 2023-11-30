@@ -96,7 +96,8 @@ composer install
 ```shell
 php artisan serve
 ```
+8. Buat nama database di database lokal dengan nama crmdb (misal menggunakan tools phpmyadmin).
 
-8. Import database MySQL yang ada di link google drive dengan nama file crmdb.sql
+9. Import database MySQL yang ada di link google drive dengan nama file crmdb.sql
 
-9. Import api_crm.postman_collection.json kedalam aplikasi postman.
+10. Import api_crm.postman_collection.json kedalam aplikasi postman.
