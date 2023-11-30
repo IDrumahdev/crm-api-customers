@@ -1,4 +1,12 @@
 # Doc Instalasi API Customer
+
+API Backend ini menggunakan Laravel Versi 10.x
+
+## Request Software
+1. PHP versi >8.1
+2. MySQL Server
+3. Composer version 2.5.8
+
 ## Clone Project
 1. Clone Project dengan link :
 
@@ -77,14 +85,18 @@ VITE_PUSHER_SCHEME="${PUSHER_SCHEME}"
 VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 ```
-- catatan : Sesuaikan konfigurasi database di antaranya nama DB_DATABASE crmdb , DB_USERNAME dan DB_PASSWORD dengan benar.
+- catatan : Sesuaikan konfigurasi database di antaranya nama DB_DATABASE crmdb , DB_USERNAME dan DB_PASSWORD dengan benar. Jika APP_KEY masih belum terisi ``` php artisan key:generate```
+
 6. Jalankan perintah
 ```shell
 composer install
 ```
+
 7. Jalankan perintah
 ```shell
 php artisan serve
 ```
+
 8. Import database MySQL yang ada di link google drive dengan nama file crmdb.sql
+
 9. Import api_crm.postman_collection.json kedalam aplikasi postman.
